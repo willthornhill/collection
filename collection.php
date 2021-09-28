@@ -1,6 +1,10 @@
 <?php
 //--QUERY--
-$db = new PDO('mysql:host=db; dbname=collection', 'root', 'password');
+//$db = new PDO('mysql:host=db; dbname=collection', 'root', 'password');
+//$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+require_once 'dbConnect.php';
+$db = dbConnect();
+
 $query = $db->prepare("SELECT `setName`, `setNumber`, `pieceCount`, `releaseYear` FROM `sets`;");
 $query->execute();
 $sets = $query->fetchAll();
