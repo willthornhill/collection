@@ -21,12 +21,9 @@ $sets = fetchData($db);
 <div class="main">
     <div class="item">
         <?php
-            foreach ($sets AS $set){
-                echo "<h2>" .$set['setName']. "</h2>";
-                echo "<h4>Set Number: " .$set['setNumber']. "</h4>";
-                echo "<h4>Piece Count: " .$set['pieceCount']. "</h4>";
-                echo "<h4>Release Year: " .$set['releaseYear']. "</h4>";
-            }
+            require_once 'dataList.php';
+            $list = dataList($sets);
+            echo $list;
         ?>
     </div>
 </div>
