@@ -17,4 +17,16 @@ class dataListTest extends TestCase
         $case = dataList($sets);
         $this->assertEquals($expected, $case);
     }
+
+    public function testMalformedDataList(){
+        $expected = '<h2>Slave 1 (UCS)</h2><h4>Set Number: 75060</h4><h4>Piece Count: 1996</h4><h4>Release Year: 2015</h4>';
+        $sets = 69;
+
+        $this->expectException(TypeError::class);
+        $case = dataList($sets);
+    }
+
+    public function testFailureDataList(){
+
+    }
 }
