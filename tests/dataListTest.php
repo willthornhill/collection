@@ -1,4 +1,9 @@
 <?php
+
+/**
+ *  Unit test for dataList.php
+ */
+
 require 'dataList.php';
 use PHPUnit\Framework\TestCase;
 
@@ -25,8 +30,5 @@ class dataListTest extends TestCase
         $this->expectException(TypeError::class);
         $case = dataList($sets);
     }
-
-    public function testFailureDataList(){
-
-    }
+    
 }
