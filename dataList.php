@@ -7,7 +7,7 @@
  * @return mixed
  */
 
-function dataList(array $sets){
+function dataList(array $sets): string {
     // create list as empty string
     $list = '';
     foreach ($sets as $set)

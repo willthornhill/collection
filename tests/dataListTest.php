@@ -30,5 +30,5 @@ class dataListTest extends TestCase
         $this->expectException(TypeError::class);
         $case = dataList($sets);
     }
-    
+
 }
