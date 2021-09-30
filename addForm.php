@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Takes data inputted by the user and adds it to the database
+ */
+
 require_once 'dbConnect.php';
 $db = dbConnect();
 addSet($db);
@@ -16,5 +21,7 @@ function addSet($db){
         $newYear = $_POST['year'];
 
         $query->execute(['newName' => $newName, 'newNumber' => $newNumber, 'newPieces' => $newPieces, 'newYear' => $newYear]);
+
+        header("Location: collection.php");
     }
 }
