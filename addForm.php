@@ -5,7 +5,7 @@ addSet($db);
 
 function addSet($db){
 
-    if(isset($query)) {
+    if(isset($_POST["name"], $_POST["number"], $_POST["pieces"], $_POST["year"])) {
         $sql = "INSERT INTO sets (`setName`, `setNumber`, `pieceCount`, `releaseYear` )
         VALUES (:newName, :newNumber, :newPieces, :newYear)";
         $query = $db->prepare($sql);
@@ -21,19 +21,6 @@ function addSet($db){
         $query->bindParam(':newYear', $newYear);
 
         $query->execute();
+
     }
 }
-?>
-<!--<html>-->
-<!--    <form action = "addForm.php" method = post>-->
-<!--        <label for="name">Set Name</label>-->
-<!--        <input type="text" id="name"/>-->
-<!--        <label for="number">Set Number</label>-->
-<!--        <input type="text" id="number"/>-->
-<!--        <label for="pieces">Piece Count</label>-->
-<!--        <input type="text" id="pieces"/>-->
-<!--        <label for="year">Release Year</label>-->
-<!--        <input type="text" id="year"/>-->
-<!--        <input type="submit">-->
-<!--    </form>-->
-<!--</html>-->
