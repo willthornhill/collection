@@ -26,6 +26,21 @@ $sets = fetchData($db);
             echo $list;
         ?>
     </div>
+    <?php
+    require_once 'addForm.php';
+    $form = addSet($db);
+    ?>
+        <form action = "addForm.php" method = post>
+            <label for="name">Set Name</label>
+            <input type="text" name="name"/>
+            <label for="number">Set Number</label>
+            <input type="text" name="number"/>
+            <label for="pieces">Piece Count</label>
+            <input type="text" name="pieces"/>
+            <label for="year">Release Year</label>
+            <input type="text" name="year"/>
+            <input type="submit">
+        </form>
 </div>
 
 </body>
